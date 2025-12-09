@@ -12,7 +12,7 @@
     <meta name="description"
         content="تطبيق أنا مسلم (Ana Muslim) هو رفيقك اليومي في العبادة. يجمع بين القرآن الكريم، مواقيت الصلاة الدقيقة، اتجاه القبلة، والأذكار في تصميم عصري هادئ. حمّله الآن مجاناً للأندرويد.">
     <meta name="keywords"
-        content="تطبيق أنا مسلم, Ana Muslim, قرآن كريم, مواقيت الصلاة, أذكار الصباح والمساء, اتجاه القبلة, تطبيق إسلامي, تحميل تطبيق أنا مسلم, الأذان, التقويم الهجري, مسلم برو, Muslim Pro alternative">
+        content="تطبيق أنا مسلم, Ana Muslim, القرآن الكريم, قراءة القرآن بدون نت, مواقيت الصلاة, أذكار الصباح والمساء, اتجاه القبلة, بوصلة القبلة, الأذان, التقويم الهجري, إمساكية رمضان 2025, تطبيق إسلامي, Muslim App, Quran App, Prayer Times, Azkar, Qibla Finder">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Arabic">
     <meta name="author" content="Ana Muslim Team">
@@ -37,9 +37,8 @@
     <meta property="twitter:image" content="https://anamuslim.app/assets/twitter-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/jpeg" href="assets/icon.jpg">
+    <link rel="apple-touch-icon" href="assets/icon.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,26 +57,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Ana Muslim",
-      "alternateName": "أنا مسلم",
-      "operatingSystem": "Android",
-      "applicationCategory": "LifestyleApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "تطبيق إسلامي شامل يحتوي على القرآن الكريم، مواقيت الصلاة، القبلة، والأذكار.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "1250"
-      },
-      "author": {
-          "@type": "Organization",
-          "name": "Ana Muslim Team"
-      }
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ana Muslim",
+          "alternateName": "أنا مسلم",
+          "operatingSystem": "Android",
+          "applicationCategory": "LifestyleApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "تطبيق إسلامي شامل يحتوي على القرآن الكريم، مواقيت الصلاة، القبلة، والأذكار.",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1250"
+          },
+          "author": {
+              "@type": "Organization",
+              "name": "Ana Muslim Team"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "هل التطبيق يعمل بدون إنترنت؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم، معظم الميزات الأساسية مثل قراءة القرآن، الأذكار، والمسبحة تعمل بكفاءة تامة دون الحاجة لاتصال بالإنترنت."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل التطبيق مجاني؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "التطبيق مجاني 100% لوجه الله تعالى، ولا يحتوي على أي إعلانات مزعجة تعكر صفو العبادة."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كيف أحدد اتجاه القبلة بدقة؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "تأكد من تفعيل خدمة الموقع (GPS) في هاتفك، ثم قم بمعايرة البوصلة بتحريك الهاتف على شكل رقم 8 للحصول على أدق نتيجة."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -161,25 +193,8 @@
             <div class="hero-image reveal-image">
                 <div class="phone-mockup glass floating-anim">
                     <div class="screen-content">
-                        <!-- Simulated App UI -->
-                        <div class="app-header">
-                            <div class="app-time">12:30</div>
-                            <div class="app-status"><i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i>
-                            </div>
-                        </div>
-                        <div class="app-body">
-                            <div class="app-card-hero">
-                                <span class="salah-name">الظهر</span>
-                                <span class="salah-time">12:45 PM</span>
-                                <span class="time-left">-00:15:00</span>
-                            </div>
-                            <div class="app-grid">
-                                <div class="app-icon"><i class="fas fa-book-open"></i></div>
-                                <div class="app-icon"><i class="fas fa-hands-praying"></i></div>
-                                <div class="app-icon"><i class="fas fa-kaaba"></i></div>
-                                <div class="app-icon"><i class="fas fa-mosque"></i></div>
-                            </div>
-                        </div>
+                        <img src="assets/home.jpg" alt="Ana Muslim App Interface"
+                            style="width:100%; height:100%; object-fit:cover;">
                         <!-- Glow behind phone -->
                         <div class="phone-glow"></div>
                     </div>
@@ -258,16 +273,20 @@
             </div>
             <div class="screenshots-grid">
                 <div class="screenshot-mobile-frame reveal delay-100">
-                    <div class="img-placeholder bg-gradient-1"><span>الرئيسية</span></div>
+                    <img src="assets/home.jpg" alt="واجهة تطبيق أنا مسلم الرئيسية - مواقيت الصلاة والقبلة"
+                        class="screenshot-img" loading="lazy">
                 </div>
                 <div class="screenshot-mobile-frame reveal delay-200 transform-up">
-                    <div class="img-placeholder bg-gradient-2"><span>القرآن</span></div>
+                    <img src="assets/quran.jpg" alt="قراءة القرآن الكريم في تطبيق أنا مسلم بخط واضح"
+                        class="screenshot-img" loading="lazy">
                 </div>
                 <div class="screenshot-mobile-frame reveal delay-300">
-                    <div class="img-placeholder bg-gradient-3"><span>الأذكار</span></div>
+                    <img src="assets/adhkar.jpg" alt="أذكار الصباح والمساء وحصن المسلم" class="screenshot-img"
+                        loading="lazy">
                 </div>
                 <div class="screenshot-mobile-frame reveal delay-400 transform-up">
-                    <div class="img-placeholder bg-gradient-4"><span>الإعدادات</span></div>
+                    <img src="assets/settings.jpg" alt="إعدادات تطبيق أنا مسلم - الوضع الليلي وتخصيص التنبيهات"
+                        class="screenshot-img" loading="lazy">
                 </div>
             </div>
         </div>
