@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Globe Config
         const GLOBE_RADIUS = 400;
-        const DOTS_AMOUNT = 800;
+        let DOTS_AMOUNT = 800; // Default for desktop
         const DOT_RADIUS = 1.5;
         let fieldOfView;
 
@@ -41,24 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             project() {
                 this.scaleProjected = fieldOfView / (fieldOfView + this.z);
-                this.xProjected = (this.x * this.scaleProjected) + width / 2; // Center
+                this.xProjected = (this.x * this.scaleProjected) + width / 2;
                 this.yProjected = (this.y * this.scaleProjected) + height / 2;
             }
             draw() {
                 this.project();
-                // Opacity based on Z (depth)
-                // We clamp opacity to avoid negative values
                 let alpha = (this.z + GLOBE_RADIUS) / (2 * GLOBE_RADIUS);
-                // Invert so front is opaque
                 alpha = 1 - Math.min(Math.max(alpha, 0), 1);
-                // Make back dots very faint
                 if (alpha < 0.1) alpha = 0.1;
 
                 ctx.globalAlpha = alpha;
-
-                // Color based on x position for gradient effect
-                if (this.x > 0) ctx.fillStyle = '#0FC2C0'; // Teal
-                else ctx.fillStyle = '#A855F7'; // Purple
+                if (this.x > 0) ctx.fillStyle = '#0FC2C0';
+                else ctx.fillStyle = '#A855F7';
 
                 ctx.beginPath();
                 ctx.arc(this.xProjected, this.yProjected, DOT_RADIUS * this.scaleProjected, 0, Math.PI * 2);
@@ -74,8 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
             fieldOfView = width * 0.8;
             dots = [];
 
+            // Performance Optimization: Reduce dots on mobile
+            if (window.innerWidth < 768) {
+                DOTS_AMOUNT = 250; // Vastly reduce for mobile
+            } else {
+                DOTS_AMOUNT = 800;
+            }
+
             for (let i = 0; i < DOTS_AMOUNT; i++) {
-                const theta = Math.random() * 2 * Math.PI; // Random angle
+                const theta = Math.random() * 2 * Math.PI;
                 const phi = Math.acos((Math.random() * 2) - 1);
 
                 const x = GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta);
