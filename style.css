@@ -1062,17 +1062,18 @@ a {
 
 /* --- Mobile Compatibility Fixes --- */
 @media (max-width: 768px) {
+
     /* Prevent overlapping cards in screenshot grid */
     .transform-up {
         margin-top: 0 !important;
     }
-    
+
     /* Adjust Hero Title size for small screens */
     .hero-title {
         font-size: 2.2rem !important;
         margin-bottom: 15px;
     }
-    
+
     /* Resize Phone Mockup to fit screen */
     .phone-mockup {
         width: 280px !important;
@@ -1087,7 +1088,11 @@ a {
         padding-bottom: 40px;
     }
 
-    .features, .screenshots, .quote-section, .download, .faq {
+    .features,
+    .screenshots,
+    .quote-section,
+    .download,
+    .faq {
         padding: 60px 0;
     }
 
@@ -1099,10 +1104,30 @@ a {
     .container {
         padding: 0 20px;
     }
-    
+
     /* Reduce blob size/opacity on mobile to prevent distraction */
     .aurora-blob {
         opacity: 0.3;
         filter: blur(60px);
+    }
+
+    /* FAQ Mobile Fixes */
+    .accordion-header {
+        padding: 20px;
+        font-size: 1rem;
+        /* Smaller font for mobile */
+        gap: 15px;
+        /* Space between text and icon */
+        text-align: right;
+    }
+
+    .content-inner {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .icon-wrapper {
+        min-width: 24px;
+        /* Prevent icon from shrinking */
     }
 }
