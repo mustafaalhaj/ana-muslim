@@ -1,5 +1,215 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Translations ---
+    const translations = {
+        ar: {
+            app_name: "أنا مسلم",
+            app_subtitle: "Ana Muslim",
+            nav_features: "المميزات",
+            nav_screenshots: "صور التطبيق",
+            nav_faq: "الأسئلة",
+            nav_download: "تحميل التطبيق",
+            hero_badge: "✨ تحديث جديد 2.0",
+            hero_title: "رفيقك اليومي \n في العبادة والحياة",
+            hero_desc: "اكتشف تجربة إسلامية متكاملة تجمع بين الجمال والسهولة. قرآن، أذكار، وقبلة دقيقة في تطبيق صمم ليليق بك.",
+            btn_download_apk: "تحميل APK",
+            btn_video: "فيديو تعريفي",
+            stat_downloads_num: "+100k",
+            stat_downloads_label: "تحميل",
+            stat_rating_num: "4.9",
+            stat_rating_label: "تقييم المستخدمين",
+            features_subtitle: "لماذا أنا مسلم؟",
+            features_title: "كل ما تحتاجه في مكان واحد",
+            feat_quran_title: "القرآن الكريم",
+            feat_quran_desc: "المصحف كاملاً بخط واضح، مع تلاوات صوتية لأشهر القراء وإمكانية الحفظ والمتابعة.",
+            feat_prayer_title: "مواقيت دقيقة",
+            feat_prayer_desc: "تنبيهات دقيقة للأذان حسب موقعك، مع إمكانية تخصيص صوت المؤذن والمذهب الفقهي.",
+            feat_qibla_title: "القبلة الذكية",
+            feat_qibla_desc: "بوصلة متطورة تعتمد على المستشعرات والـ GPS لضمان دقة الاتجاه 100% أينما كنت.",
+            feat_azkar_title: "أذكار المسلم",
+            feat_azkar_desc: "حصن المسلم كاملاً، أذكار الصباح والمساء، وسبحة إلكترونية سلسة تساعدك على الذكر.",
+            feat_calendar_title: "التقويم الهجري",
+            feat_calendar_desc: "تابع الأيام البيض والمناسبات الدينية مع تقويم هجري وميلادي مدمج في واجهة واحدة.",
+            feat_ai_title: "المساعد الذكي",
+            feat_ai_desc: "استفسر عن مواقيت الصيام، اتجاه القبلة، أو ابحث في القرآن باستخدام الذكاء الاصطناعي.",
+            screenshots_subtitle: "جولة سريعة",
+            screenshots_title: "واجهة عصرية تريح العين",
+            quote_verse: "\"أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ\"",
+            quote_ref: "سورة الرعد - آية 28",
+            download_title: "جاهز لتحسين يومك؟",
+            download_desc: "قم بتحميل التطبيق الآن واستمتع بتجربة إبمانية فريدة.",
+            btn_download_free: "تحميل APK مجاناً",
+            btn_share: "مشاركة التطبيق",
+            faq_title: "الأسئلة الشائعة",
+            faq_q1: "هل التطبيق يعمل بدون إنترنت؟",
+            faq_a1: "نعم، معظم الميزات الأساسية مثل قراءة القرآن، الأذكار، والمسبحة تعمل بكفاءة تامة دون الحاجة لاتصال بالإنترنت.",
+            faq_q2: "هل التطبيق مجاني؟",
+            faq_a2: "التطبيق مجاني 100% لوجه الله تعالى، ولا يحتوي على أي إعلانات مزعجة تعكر صفو العبادة.",
+            faq_q3: "كيف أحدد اتجاه القبلة بدقة؟",
+            faq_a3: "تأكد من تفعيل خدمة الموقع (GPS) في هاتفك، ثم قم بمعايرة البوصلة بتحريك الهاتف على شكل رقم 8 للحصول على أدق نتيجة.",
+            footer_privacy: "سياسة الخصوصية",
+            footer_contact: "تواصل معنا",
+            footer_instagram: "تابعنا على إنستغرام",
+            footer_copyright: "© 2025 – تطبيق أنا مسلم. جميع الحقوق محفوظة. Mustafa Alhaj Mustafa",
+            footer_disclaimer: "هذا التطبيق لا يقدّم فتاوى شخصية، ويُنصح دائماً بالرجوع إلى أهل العلم."
+        },
+        en: {
+            app_name: "Ana Muslim",
+            app_subtitle: "Islamic App",
+            nav_features: "Features",
+            nav_screenshots: "Screenshots",
+            nav_faq: "FAQ",
+            nav_download: "Download",
+            hero_badge: "✨ New Update 2.0",
+            hero_title: "Your Daily Companion \n in Worship & Life",
+            hero_desc: "Discover a complete Islamic experience combining beauty and ease. Quran, Azkar, and accurate Qibla in an app designed for you.",
+            btn_download_apk: "Download APK",
+            btn_video: "Intro Video",
+            stat_downloads_num: "+100k",
+            stat_downloads_label: "Downloads",
+            stat_rating_num: "4.9",
+            stat_rating_label: "User Rating",
+            features_subtitle: "Why Ana Muslim?",
+            features_title: "Everything You Need in One Place",
+            feat_quran_title: "Noble Quran",
+            feat_quran_desc: "Complete Quran with clear font, audio recitations by famous reciters, and progress tracking.",
+            feat_prayer_title: "Accurate Times",
+            feat_prayer_desc: "Precise Adhan notifications based on your location, with customizable Muazzin sounds and Fiqh schools.",
+            feat_qibla_title: "Smart Qibla",
+            feat_qibla_desc: "Advanced compass using sensors and GPS to ensure 100% accurate direction wherever you are.",
+            feat_azkar_title: "Muslim Azkar",
+            feat_azkar_desc: "Complete Hisn al-Muslim, Morning & Evening Azkar, and a smooth digital Tasbih.",
+            feat_calendar_title: "Hijri Calendar",
+            feat_calendar_desc: "Track White Days and religious occasions with a combined Hijri and Gregorian calendar.",
+            feat_ai_title: "Smart Assistant",
+            feat_ai_desc: "Ask about fasting times, Qibla direction, or search the Quran using AI.",
+            screenshots_subtitle: "Quick Tour",
+            screenshots_title: "Modern & Comfortable UI",
+            quote_verse: "\"Unquestionably, by the remembrance of Allah hearts are assured.\"",
+            quote_ref: "Surah Ar-Ra'd - Verse 28",
+            download_title: "Ready to Improve Your Day?",
+            download_desc: "Download the app now and enjoy a unique spiritual experience.",
+            btn_download_free: "Download APK Free",
+            btn_share: "Share App",
+            faq_title: "Frequently Asked Questions",
+            faq_q1: "Does the app work offline?",
+            faq_a1: "Yes, most core features like Quran reading, Azkar, and Tasbih work perfectly without an internet connection.",
+            faq_q2: "Is the app free?",
+            faq_a2: "The app is 100% free for the sake of Allah, and contains no annoying ads to disturb your worship.",
+            faq_q3: "How do I get accurate Qibla direction?",
+            faq_a3: "Ensure GPS is enabled, then calibrate the compass by moving your phone in a figure-8 motion for the best result.",
+            footer_privacy: "Privacy Policy",
+            footer_contact: "Contact Us",
+            footer_instagram: "Follow on Instagram",
+            footer_copyright: "© 2025 – Ana Muslim App. All rights reserved. Mustafa Alhaj Mustafa",
+            footer_disclaimer: "This app does not provide personal Fatwas; always consult scholars."
+        },
+        fr: {
+            app_name: "Ana Muslim",
+            app_subtitle: "Application Islamique",
+            nav_features: "Fonctionnalités",
+            nav_screenshots: "Captures",
+            nav_faq: "FAQ",
+            nav_download: "Télécharger",
+            hero_badge: "✨ Nouvelle Mise à jour 2.0",
+            hero_title: "Votre Compagnon \n Quotidien",
+            hero_desc: "Découvrez une expérience islamique complète alliant beauté et facilité. Coran, Adhkar et Qibla précise dans une application conçue pour vous.",
+            btn_download_apk: "Télécharger APK",
+            btn_video: "Vidéo Intro",
+            stat_downloads_num: "+100k",
+            stat_downloads_label: "Téléchargements",
+            stat_rating_num: "4.9",
+            stat_rating_label: "Note Utilisateurs",
+            features_subtitle: "Pourquoi Ana Muslim ?",
+            features_title: "Tout ce dont vous avez besoin",
+            feat_quran_title: "Noble Coran",
+            feat_quran_desc: "Coran complet, police claire, récitations audio et suivi de progression.",
+            feat_prayer_title: "Horaires Précis",
+            feat_prayer_desc: "Notifications Adhan précises selon votre position, avec voix de Muazzin et écoles juridiques personnalisables.",
+            feat_qibla_title: "Qibla Intelligente",
+            feat_qibla_desc: "Boussole avancée utilisant capteurs et GPS pour une précision de 100% partout.",
+            feat_azkar_title: "Adhkar Musulman",
+            feat_azkar_desc: "Hisn al-Muslim complet, Adhkar du matin/soir et Tasbih numérique fluide.",
+            feat_calendar_title: "Calendrier Hégirien",
+            feat_calendar_desc: "Suivez les jours blancs et occasions religieuses avec un calendrier Hégirien/Grégorien intégré.",
+            feat_ai_title: "Assistant Intelligent",
+            feat_ai_desc: "Demandez les heures de jeûne, la Qibla ou recherchez dans le Coran via l'IA.",
+            screenshots_subtitle: "Tour Rapide",
+            screenshots_title: "Interface Moderne & Confortable",
+            quote_verse: "\"N'est-ce point par l'évocation d'Allah que se tranquillisent les cœurs ?\"",
+            quote_ref: "Sourate Ar-Ra'd - Verset 28",
+            download_title: "Prêt à améliorer votre journée ?",
+            download_desc: "Téléchargez l'application maintenant et vivez une expérience spirituelle unique.",
+            btn_download_free: "Télécharger Gratuitement",
+            btn_share: "Partager l'App",
+            faq_title: "Questions Fréquentes",
+            faq_q1: "L'application fonctionne-t-elle hors ligne ?",
+            faq_a1: "Oui, la plupart des fonctions (Coran, Adhkar, Tasbih) fonctionnent parfaitement sans internet.",
+            faq_q2: "L'application est-elle payante ?",
+            faq_a2: "L'application est 100% gratuite pour la face d'Allah, sans publicités gênantes.",
+            faq_q3: "Comment avoir une Qibla précise ?",
+            faq_a3: "Activez le GPS et calibrez la boussole en faisant un 8 avec votre téléphone pour le meilleur résultat.",
+            footer_privacy: "Politique de Confidentialité",
+            footer_contact: "Contactez-nous",
+            footer_instagram: "Suivre sur Instagram",
+            footer_copyright: "© 2025 – App Ana Muslim. Tous droits réservés. Mustafa Alhaj Mustafa",
+            footer_disclaimer: "Cette application ne fournit pas de Fatwas personnelles ; consultez les savants."
+        }
+    };
+
+    const setLanguage = (lang) => {
+        // Update html attrs
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+        // Update elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                // If it's the hero title, we might need to update ScrambleText if initialized
+                if (el.classList.contains('hero-title')) {
+                    // handled separately via ScrambleText updates or reload
+                    // But we set innerHTML for static view
+                    el.innerHTML = translations[lang][key].replace('\n', '<br>');
+                } else {
+                    el.innerText = translations[lang][key];
+                }
+            }
+        });
+
+        // Save preference
+        localStorage.setItem('ana_muslim_lang', lang);
+
+        // Update selector value
+        const selector = document.getElementById('language-selector');
+        if (selector) selector.value = lang;
+    };
+
+    // Initialize Language
+    const savedLang = localStorage.getItem('ana_muslim_lang') || 'ar';
+    const langSelect = document.getElementById('language-selector');
+    if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+            // Re-trigger scramble text if it's the hero title
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle && typeof ScrambleText !== 'undefined') {
+                // We need to access the scramble instance if possible, or just create new one
+                // Simpler: Just reload scrambler or just let the setText update it
+                // Since ScrambleText class is below, we might need to hoist or wait.
+                // Actually, ScrambleText is defined below. We can't access it easily here unless we move the class up or use a global.
+                // Let's rely on the fact that setLanguage updates innerText.
+                // However, ScrambleText in this code overwrites it on load.
+                // We should update the `finalHeader` inside the onload.
+            }
+            window.location.reload(); // Easiest way to ensure all JS effects (Scramble, etc) align with new text structure without complex state management
+        });
+        // Set initial value in selector without triggering reload
+        langSelect.value = savedLang;
+        setLanguage(savedLang);
+    }
+
+
     // --- Preloader & Entry ---
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -17,13 +227,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Start Text Scramble
                 const heroTitle = document.querySelector('.hero-title');
                 if (heroTitle && typeof ScrambleText !== 'undefined') {
-                    new ScrambleText(heroTitle, "رفيقك اليومي \n في العبادة والحياة").start();
+                    const currentLang = localStorage.getItem('ana_muslim_lang') || 'ar';
+                    const text = translations[currentLang].hero_title; // Use translated text
+                    new ScrambleText(heroTitle, text).start();
                 }
             }, 500); // Shorter delay for snappier feel
         };
 
         window.addEventListener('load', removePreloader);
-        
+
         // Safety fallback: Force show after 4 seconds if load hangs
         setTimeout(removePreloader, 4000);
     }

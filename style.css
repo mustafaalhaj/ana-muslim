@@ -68,6 +68,18 @@ body {
     /* Hide default cursor */
 }
 
+/* Restoring cursor on mobile/touch devices is crucial for UX */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: auto;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+}
+
 /* --- Cinema Grade Film Grain --- */
 .grain-overlay {
     position: fixed;
@@ -1131,3 +1143,100 @@ a {
         /* Prevent icon from shrinking */
     }
 }
+
+/* --- Language Selector --- */
+.lang-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    /* Reduced margin */
+}
+
+@media (max-width: 768px) {
+    .btn-primary.btn-sm span {
+        display: none;
+        /* Hide text on mobile download button to save space */
+    }
+
+    .btn-primary.btn-sm {
+        padding: 10px 15px;
+        /* Compact button */
+    }
+
+    .lang-switch-wrapper {
+        margin: 0 8px;
+    }
+
+    /* Ensure FAQ content is visible when open */
+    .accordion-content {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.lang-select {
+    background: rgba(15, 23, 42, 0.6);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lang-select:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(15, 194, 192, 0.2);
+}
+
+.lang-select option {
+    background: #020617;
+    /* bg-dark */
+    color: #fff;
+    padding: 10px;
+}
+
+/* LTR Overrides */
+html[dir="ltr"] {
+    text-align: left;
+    /* Default alignment */
+}
+
+/* Flip text align for specific centered elements if needed? No, standard center works. */
+html[dir="ltr"] .hero-content,
+html[dir="ltr"] .section-header,
+html[dir="ltr"] .loader-content,
+html[dir="ltr"] .download-content,
+html[dir="ltr"] .footer-content {
+    /* These are centered by design usually */
+    text-align: center;
+}
+
+html[dir="ltr"] .feature-card,
+html[dir="ltr"] .text-start-ltr {
+    text-align: left;
+}
+
+html[dir="ltr"] .accordion-header {
+    text-align: left;
+    flex-direction: row-reverse;
+    /* Put icon on right? */
+}
+
+/* In RTL: Text ... Icon. Flex row.
+   In LTR: Text ... Icon. Flex row.
+   The accordion header has `justify-content: space-between`.
+   So Text is at start, Icon at end.
+   In RTL: Start is Right. Icon is Left.
+   In LTR: Start is Left. Icon is Right.
+   This is perfect. No change needed for flex order.
+*/
+
+/* Adjustments for icons in scrambled text or buttons might be automatic via flex gap */
