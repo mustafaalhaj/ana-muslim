@@ -3,22 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Preloader & Entry ---
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', () => {
+        const removePreloader = () => {
+            if (preloader.style.opacity === '0') return; // Already done
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
 
                 // Trigger entry animations
-                document.querySelector('.header').classList.remove('initial-hidden');
+                const header = document.querySelector('.header');
+                if (header) header.classList.remove('initial-hidden');
                 document.querySelectorAll('.hero .reveal-text').forEach(el => el.classList.add('active'));
 
                 // Start Text Scramble
                 const heroTitle = document.querySelector('.hero-title');
-                if (heroTitle) {
+                if (heroTitle && typeof ScrambleText !== 'undefined') {
                     new ScrambleText(heroTitle, "رفيقك اليومي \n في العبادة والحياة").start();
                 }
-            }, 1000);
-        });
+            }, 500); // Shorter delay for snappier feel
+        };
+
+        window.addEventListener('load', removePreloader);
+        
+        // Safety fallback: Force show after 4 seconds if load hangs
+        setTimeout(removePreloader, 4000);
     }
 
     // --- 3D Globe / Network Canvas ---

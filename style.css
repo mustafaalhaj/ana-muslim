@@ -1059,3 +1059,50 @@ a {
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px rgba(225, 48, 108, 0.8));
 }
+
+/* --- Mobile Compatibility Fixes --- */
+@media (max-width: 768px) {
+    /* Prevent overlapping cards in screenshot grid */
+    .transform-up {
+        margin-top: 0 !important;
+    }
+    
+    /* Adjust Hero Title size for small screens */
+    .hero-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 15px;
+    }
+    
+    /* Resize Phone Mockup to fit screen */
+    .phone-mockup {
+        width: 280px !important;
+        height: auto !important;
+        aspect-ratio: 9/19;
+        margin: 0 auto;
+    }
+
+    /* Reduce excessive padding */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    .features, .screenshots, .quote-section, .download, .faq {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* Fix container padding */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Reduce blob size/opacity on mobile to prevent distraction */
+    .aurora-blob {
+        opacity: 0.3;
+        filter: blur(60px);
+    }
+}
