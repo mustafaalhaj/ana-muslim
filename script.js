@@ -434,22 +434,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // FAQ
+    // FAQ
     document.querySelectorAll('.accordion-header').forEach(header => {
         header.addEventListener('click', () => {
             const content = header.nextElementSibling;
+            const isOpen = header.classList.contains('active');
 
             // Close others
             document.querySelectorAll('.accordion-header').forEach(h => {
                 if (h !== header && h.classList.contains('active')) {
                     h.classList.remove('active');
                     h.nextElementSibling.style.maxHeight = null;
+                    h.nextElementSibling.style.opacity = '0'; // Ensure opacity transition
                 }
             });
 
             // Toggle current
             header.classList.toggle('active');
-            if (header.classList.contains('active')) content.style.maxHeight = content.scrollHeight + "px";
-            else content.style.maxHeight = null;
+            if (!isOpen) {
+                // Opening
+                content.style.opacity = '1';
+                // Use small timeout or requestAnimationFrame to ensure display transition
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = (content.scrollHeight + 20) + "px"; // Add buffer
+                });
+            } else {
+                // Closing
+                content.style.maxHeight = null;
+                content.style.opacity = '0';
+            }
         });
     });
 

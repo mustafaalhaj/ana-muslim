@@ -806,7 +806,9 @@ a {
 
 .accordion-content {
     max-height: 0;
-    transition: max-height 0.5s var(--ease-smooth);
+    opacity: 0;
+    /* Hidden state */
+    transition: max-height 0.5s var(--ease-smooth), opacity 0.5s var(--ease-smooth);
     background: rgba(0, 0, 0, 0.3);
 }
 
