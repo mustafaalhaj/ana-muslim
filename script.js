@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_screenshots: "Screenshots",
             nav_faq: "FAQ",
             nav_download: "Download",
-            hero_badge: "✨ New Update 2.0",
+            hero_badge: "✨ New Update 1.0",
             hero_title: "Your Daily Companion \n in Worship & Life",
             hero_desc: "Discover a complete Islamic experience combining beauty and ease. Quran, Azkar, and accurate Qibla in an app designed for you.",
             btn_download_apk: "Download APK",
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_screenshots: "Captures",
             nav_faq: "FAQ",
             nav_download: "Télécharger",
-            hero_badge: "✨ Nouvelle Mise à jour 2.0",
+            hero_badge: "✨ Nouvelle Mise à jour 1.0",
             hero_title: "Votre Compagnon \n Quotidien",
             hero_desc: "Découvrez une expérience islamique complète alliant beauté et facilité. Coran, Adhkar et Qibla précise dans une application conçue pour vous.",
             btn_download_apk: "Télécharger APK",
@@ -522,5 +522,33 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.backgroundColor = 'transparent';
         });
     });
+
+
+    // --- Mobile Menu Logic ---
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (mobileMenuBtn && mobileMenu) {
+        // Open
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        // Close
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+
+        // Close on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
 
 });
