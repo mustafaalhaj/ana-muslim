@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_screenshots: "صور التطبيق",
             nav_faq: "الأسئلة",
             nav_download: "تحميل التطبيق",
-            hero_badge: "✨ تحديث جديد 2.0",
+            hero_badge: "✨ تحديث جديد 1.0",
             hero_title: "رفيقك اليومي \n في العبادة والحياة",
             hero_desc: "اكتشف تجربة إسلامية متكاملة تجمع بين الجمال والسهولة. قرآن، أذكار، وقبلة دقيقة في تطبيق صمم ليليق بك.",
             btn_download_apk: "تحميل APK",
