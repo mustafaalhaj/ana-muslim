@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mustafa.ltd/sitemap.xml
+Sitemap: https://anamuslim.eu/sitemap.xml
