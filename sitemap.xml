@@ -9,6 +9,13 @@
   </url>
 
   <url>
+    <loc>https://anamuslim.eu/app.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
     <loc>https://anamuslim.eu/quran.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
