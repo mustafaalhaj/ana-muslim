@@ -1220,14 +1220,6 @@ a {
     }
 }
 
-/* --- Language Selector --- */
-.lang-switch-wrapper {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-    /* Reduced margin */
-}
-
 @media (max-width: 768px) {
     .btn-primary.btn-sm span {
         display: none;
@@ -1239,44 +1231,11 @@ a {
         /* Compact button */
     }
 
-    .lang-switch-wrapper {
-        margin: 0 8px;
-    }
-
     /* Ensure FAQ content is visible when open */
     .accordion-content {
         visibility: visible;
         opacity: 1;
     }
-}
-
-.lang-select {
-    background: rgba(15, 23, 42, 0.6);
-    color: var(--text-white);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    outline: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.lang-select:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(15, 194, 192, 0.2);
-}
-
-.lang-select option {
-    background: #020617;
-    /* bg-dark */
-    color: #fff;
-    padding: 10px;
 }
 
 /* LTR Overrides */
