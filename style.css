@@ -1674,3 +1674,42 @@ html[dir="ltr"] .accordion-header {
         left: 12px;
     }
 }
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 99999;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 194, 192, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.cookie-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+.cookie-banner-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 10px;
+}

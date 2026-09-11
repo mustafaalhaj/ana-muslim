@@ -506,6 +506,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Cookie Consent Banner ---
+    if (!localStorage.getItem('cookie_consent')) {
+        const cookieBanner = document.createElement('div');
+        cookieBanner.id = 'cookie-consent-banner';
+        cookieBanner.className = 'cookie-banner glass';
+        cookieBanner.innerHTML = `
+            <div class="cookie-banner-content">
+                <p>نحن نستخدم ملفات تعريف الارتباط (Cookies) لضمان تقديم أفضل تجربة وإعلانات مخصصة وفقاً لـ <a href="privacy.html">سياسة الخصوصية</a>.</p>
+                <div class="cookie-banner-actions">
+                    <button id="accept-cookies-btn" class="btn btn-primary btn-sm" style="padding: 6px 18px; border-radius: 8px;">موافق</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(cookieBanner);
+        
+        const acceptBtn = document.getElementById('accept-cookies-btn');
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookie_consent', 'accepted');
+                cookieBanner.remove();
+            });
+        }
+    }
+
 });
 
 // --- Global iOS IPA Modal Helper Functions ---
